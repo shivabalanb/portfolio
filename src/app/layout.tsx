@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
   title: "Shiva's Portfolio",
   description: "",
@@ -14,10 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        {children}
-      </body>
+      <link rel="icon" href="/favicon.ico" />
+
+      <body>{children}</body>
     </html>
   );
 }
