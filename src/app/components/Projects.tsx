@@ -14,7 +14,7 @@ const projects: ProjectProps[] = [
     title: "Chit-Chat",
     description:
       "A responsive, real-time chat web app that features group messaging, user authentication, and persistent chat history",
-    skills: ["MongoDB", "Prisma", "Tailwind"],
+    skills: ["Stream SDK", "Shadcn", "Clerk"],
     repo: "https://github.com/shivabalanb/chit-chat",
   },
   {

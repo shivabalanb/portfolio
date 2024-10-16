@@ -6,7 +6,10 @@ const skillMap: { [key: string]: string } = {
   MongoDB: " bg-cyan-200",
   "Framer Motion": " bg-pink-200",
   "ThirdWeb SDK": " bg-indigo-200",
-  Solidity: " bg-lime-200",
+  Solidity: "bg-lime-200",
+  Clerk: "bg-emerald-300",
+  Shadcn: "bg-amber-300",
+  "Stream SDK": "bg-rose-200",
 };
 
 const Skill = ({ skill }: { skill: string }) => {
