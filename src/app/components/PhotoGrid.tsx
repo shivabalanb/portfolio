@@ -26,7 +26,7 @@ const PhotoGrid = ({ className = "" }: PhotoGridProps) => {
             className="h-full w-full object-cover"
           />
            <Image
-            alt="study"
+            alt="skyline"
             width={200}
             height={340}
             src="/splash/skyline.jpg"
@@ -35,10 +35,10 @@ const PhotoGrid = ({ className = "" }: PhotoGridProps) => {
 
         <div className="col-span-2">
           <Image
-            alt="hike"
+            alt="hiking"
             width={200}
             height={340}
-            src="/splash/hike.jpg"
+            src="/splash/hiking.jpg"
             className="h-full w-full object-cover"
           />
         </div>
