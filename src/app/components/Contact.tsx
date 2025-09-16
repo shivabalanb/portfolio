@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Title from "./Title";
 
 const Contact = () => {
   return (
-    <div id="contact" className=" w-full   flex  justify-center   mt-12">
-      <div className="flex flex-wrap flex-grow max-w-[800px] px-12 lg:px-0 gap-6 ">
+    <div id="contact" className=" w-full   flex  justify-center   mt-52">
+      <div className="flex flex-wrap flex-grow  px-12 lg:px-0 gap-6 ">
         <div className="flex flex-wrap w-full justify-between ">
-          <h1 className="text-6xl mb-4">Contact</h1>
+          <Title>Contact</Title>
           <div>
             <p>Feel free to reach me at</p>
             <p className="font-bold">shivabalanb03@gmail.com</p>

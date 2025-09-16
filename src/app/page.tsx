@@ -8,10 +8,12 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Splash />
-      <Experience />
-      <Projects />
-      <Contact />
+      <div className="mx-auto max-w-[1000px]">
+        <Splash />
+        <Experience />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 }

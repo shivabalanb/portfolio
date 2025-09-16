@@ -1,4 +1,5 @@
 import ProjCard from "./ProjCard";
+import Title from "./Title";
 
 export interface ProjectProps {
   title: string;
@@ -11,33 +12,32 @@ export interface ProjectProps {
 
 const projects: ProjectProps[] = [
   {
-    title: "Chit-Chat",
+    title: "Irisa – P2P WebRTC video chat",
     description:
-      "A responsive, real-time chat web app that features group messaging, user authentication, and persistent chat history",
-    skills: ["Stream SDK", "Shadcn", "Clerk"],
-    repo: "https://github.com/shivabalanb/chit-chat",
+      "A minimal WebRTC video chat app with a Rust (Axum/Tokio) WebSocket signaling server and a static browser client. Mesh topology between peers.",
+    skills: ["Rust", "Axum", "Tokio", "TypeScript"],
+    repo: "https://github.com/shivabalanb/irisa",
   },
   {
     title: "Swoosh",
     description:
-      "A decentralized crypto payments and bill splitting application built for Ethereum Virtual Machine (EVM) compatible chains—XDC, Solana’s Neon, and Base. Built for ETHDenver Hackathon 2024, won Solana best DeFi/Payments app sponsor bounty.",
-    skills: ["Next.JS", "ThirdWeb SDK", "Solidity"],
+      "A decentralized crypto payments and bill splitting application. Built for ETHDenver Hackathon 2024, won Solana best DeFi/Payments app sponsor bounty.",
+    skills: ["Next.JS", "ThirdWeb SDK", "Solidity", "TypeScript"],
     repo: "https://github.com/shivabalanb/swoosh",
   },
   {
-    title: "Pokedex",
+    title: "Kleos",
     description:
-      "Web-app that utilizes the pokeAPI to fetch basic data about Pokemon such as base stats, name, type. Features: search, infinite scroll, lazy fetch, API request",
-    skills: ["Next.JS", "React", "Tailwind"],
-    repo: "https://github.com/shivabalanb/pokedex",
+      "Polymarket‑style prediction markets using a Constant Product AMM with AI‑powered resolution. Built for ETH NewYork, won Flare's Onchain price feed bounty.",
+    skills: ["Solidity", "TypeScript", "Next.JS", "Foundry"],
+    repo: "https://github.com/shivabalanb/kleos",
   },
-
   {
-    title: "Maze Solver",
+    title: "Seva Charities",
     description:
-      "Web-based maze generation and solver. Utilizes modular design for easy interoperability with various algorithms. Features: JS async await, state management. Implemented algorithms include Dijkstra's, A*, DFS, BFS, Recursive Backtracking, Recursive Division, Prim’s",
-    skills: ["Next.JS", "Tailwind", "Framer Motion"],
-    repo: "https://github.com/shivabalanb/my-maze",
+      "Nonprofit web app with mission, events, member profiles, and an admin dashboard.",
+    skills: ["TypeScript", "Next.JS", "Supabase", "OAuth"],
+    repo: "https://github.com/SevaCharities/seva-website",
   },
 ];
 
@@ -45,11 +45,11 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="w-full min-h-screen justify-center   flex  py-8  "
+      className="w-full min-h-screen justify-center   flex  pt-52  "
     >
-      <div className="flex  max-w-[800px] flex-wrap lg:flex-nowrap flex-grow  flex-col px-12 lg:px-0 ">
-        <h1 className="text-6xl mb-4">Projects</h1>
-        <div className="grid sm:grid-cols-2 gap-2 ">
+      <div className="flex  flex-wrap lg:flex-nowrap flex-grow  flex-col px-12 lg:px-0 ">
+        <Title>Projects</Title>
+        <div className="grid sm:grid-cols-2 gap-2 my-2">
           {projects.map((p, index) => (
             <ProjCard key={index} {...p} />
           ))}

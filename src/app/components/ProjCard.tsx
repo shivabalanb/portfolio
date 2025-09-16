@@ -24,7 +24,7 @@ const ProjCard: React.FC<ProjectProps> = ({
           <h1 className=" text-xl font-bold">{title}</h1>
           <p>{description}</p>
           <div className="my-2 flex flex-wrap gap-2">
-            {skills.map((s, index) => (
+            {skills.sort().map((s, index) => (
               <Skill key={index} skill={s} />
             ))}
           </div>

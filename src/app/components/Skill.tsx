@@ -9,7 +9,14 @@ const skillMap: { [key: string]: string } = {
   Solidity: "bg-lime-200",
   Clerk: "bg-emerald-300",
   Shadcn: "bg-amber-300",
+  Foundry: "bg-orange-200",
   "Stream SDK": "bg-rose-200",
+  "Axum": "bg-yellow-200",
+  "Tokio": "bg-green-200",
+  "Rust": "bg-red-200",
+  "TypeScript": "bg-blue-200",
+  "Supabase": "bg-cyan-200",
+  "OAuth": "bg-pink-200",
 };
 
 const Skill = ({ skill }: { skill: string }) => {
