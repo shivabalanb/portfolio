@@ -6,7 +6,7 @@ interface PhotoGridProps {
 
 const PhotoGrid = ({ className = "" }: PhotoGridProps) => {
   return (
-    <div className={`p-2 h-[50vh] max-h-[700px]  ${className}`}>
+    <div className={`p-2 h-[50vh] max-h-[700px] items-center justify-center  ${className}`}>
       <div className="grid grid-cols-4 grid-rows-2 gap-2 h-full">
         <div className="row-span-2 col-span-2">
           <Image

@@ -57,7 +57,7 @@ const Experience = () => {
       className="w-full min-h-screen  flex  justify-center  items-center  "
     >
       <div className="flex  gap-12 flex-wrap lg:flex-nowrap justify-center">
-        <div className=" min-w-[500px] flex flex-col justify-center px-12 lg:px-0 gap-12">
+        <div className=" min-w-[400px] flex flex-col justify-center px-12 lg:px-0 gap-12">
           <div>
             <Title>Education</Title>
             <div className="flex md:gap-8 justify-start items-start flex-wrap md:flex-nowrap">

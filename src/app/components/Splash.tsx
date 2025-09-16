@@ -9,7 +9,7 @@ const Splash = () => {
     >
       <div className="flex flex-col items-center justify-center gap-12">
         <PhotoGrid  />
-        <div className=" w-full flex flex-col justify-center px-6 text-center">
+        <div className=" w-full flex flex-col justify-center px-6 text-center ">
           <Title>Hey, I&apos;m Shiva 🤘</Title>
           <p className="text-xl mb-2">
             Computer Science + Math senior at UT Austin with interests in
