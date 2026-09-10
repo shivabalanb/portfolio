@@ -95,8 +95,8 @@ const PhotoCard = ({
   );
 };
 
-const CENTER_ROTATION_INTERVAL_MS = 8000;
-const OUTER_ROTATION_INTERVAL_MS = 4500;
+const CENTER_ROTATION_INTERVAL_MS = 4000;
+const OUTER_ROTATION_INTERVAL_MS = 2500;
 
 const OuterColumn = ({ photos, altPrefix }: { photos: [string, string]; altPrefix: string }) => (
   <div className="col-span-1 sm:col-span-3 flex flex-col gap-0">
