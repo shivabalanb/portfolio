@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { ExpProps } from "./Experience";
 
-const ExpCard: React.FC<ExpProps> = ({
+const ExpCard = ({
   title,
   company,
   duration,
   location,
   description,
-}) => {
+}: ExpProps) => {
   return (
     <div className=" flex md:gap-8 justify-start items-start flex-wrap md:flex-nowrap  border-b-2 py-4 ">
       <Image

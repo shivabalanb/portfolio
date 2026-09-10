@@ -28,14 +28,15 @@ const Splash = () => {
 
           {/* Interests */}
           <div className="w-full flex flex-wrap gap-2.5 text-xs sm:text-sm text-gray-600">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-full font-medium">
-              <span>🧗</span>
-              <span>Bouldering (V4–V5)</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-full font-medium">
-              <span>🍳</span>
-              <span>Cooking</span>
-            </div>
+            {[
+              { icon: "🧗", label: "Bouldering (V4–V5)" },
+              { icon: "🍳", label: "Cooking" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-full font-medium">
+                <span>{item.icon}</span>
+                <span>{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -6,7 +6,6 @@ export interface ProjectProps {
   description: string;
   repo: string;
   skills: string[];
-  video?: string;
   img?: string;
 }
 
@@ -66,8 +65,8 @@ const Projects = () => {
       <div className="flex flex-wrap lg:flex-nowrap flex-grow flex-col px-12 lg:px-0">
         <Title>Projects</Title>
         <div className="grid sm:grid-cols-2 gap-4 my-2">
-          {projects.map((p, index) => (
-            <ProjCard key={index} {...p} />
+          {projects.map((p) => (
+            <ProjCard key={p.title} {...p} />
           ))}
         </div>
       </div>

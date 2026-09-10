@@ -101,8 +101,8 @@ const Experience = () => {
         <div>
           <Title>Experience</Title>
           <div>
-            {experiences.map((e, index) => (
-              <ExpCard key={index} {...e} />
+            {experiences.map((e) => (
+              <ExpCard key={e.company} {...e} />
             ))}
           </div>
         </div>

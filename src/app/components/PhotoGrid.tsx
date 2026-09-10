@@ -31,6 +31,13 @@ interface PhotoCardProps {
   priority?: boolean;
 }
 
+const CORNER_STYLES = [
+  "top-1.5 left-1.5 border-t border-l",
+  "top-1.5 right-1.5 border-t border-r",
+  "bottom-1.5 left-1.5 border-b border-l",
+  "bottom-1.5 right-1.5 border-b border-r",
+];
+
 const PhotoCard = ({
   src,
   alt,
@@ -81,16 +88,29 @@ const PhotoCard = ({
         sizes="(max-width: 768px) 50vw, 350px"
       />
 
-      <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t border-l border-white/60 pointer-events-none z-20" />
-      <div className="absolute top-1.5 right-1.5 w-2 h-2 border-t border-r border-white/60 pointer-events-none z-20" />
-      <div className="absolute bottom-1.5 left-1.5 w-2 h-2 border-b border-l border-white/60 pointer-events-none z-20" />
-      <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b border-r border-white/60 pointer-events-none z-20" />
+      {CORNER_STYLES.map((pos) => (
+        <div key={pos} className={`absolute w-2 h-2 border-white/60 pointer-events-none z-20 ${pos}`} />
+      ))}
     </div>
   );
 };
 
 const CENTER_ROTATION_INTERVAL_MS = 8000;
 const OUTER_ROTATION_INTERVAL_MS = 4500;
+
+const OuterColumn = ({ photos, altPrefix }: { photos: [string, string]; altPrefix: string }) => (
+  <div className="col-span-1 sm:col-span-3 flex flex-col gap-0">
+    {photos.map((src, idx) => (
+      <div key={idx} className="h-[175px] sm:h-[210px]">
+        <PhotoCard
+          src={src}
+          alt={`${altPrefix} ${idx === 0 ? "top" : "bottom"} photo`}
+          className="h-full"
+        />
+      </div>
+    ))}
+  </div>
+);
 
 const PhotoGrid = ({ className = "" }: { className?: string }) => {
   const [centerIdx, setCenterIdx] = useState(0);
@@ -129,52 +149,20 @@ const PhotoGrid = ({ className = "" }: { className?: string }) => {
   return (
     <div className={`w-full mx-auto ${className}`}>
       <div className="grid grid-cols-2 sm:grid-cols-12 gap-0 items-stretch justify-center overflow-hidden shadow-md rounded-lg">
-        
-        <div className="col-span-1 sm:col-span-3 flex flex-col gap-0">
-          <div className="h-[175px] sm:h-[210px]">
-            <PhotoCard
-              src={outerPhotos[0]}
-              alt="Left top photo"
-              className="h-full"
-            />
-          </div>
-          <div className="h-[175px] sm:h-[210px]">
-            <PhotoCard
-              src={outerPhotos[1]}
-              alt="Left bottom photo"
-              className="h-full"
-            />
-          </div>
-        </div>
+        <OuterColumn photos={[outerPhotos[0], outerPhotos[1]]} altPrefix="Left" />
 
         <div className="col-span-2 sm:col-span-6 order-first sm:order-none">
           <div className="h-[350px] sm:h-[420px] w-full">
             <PhotoCard
               src={CENTER_IMAGES[centerIdx]}
               alt="Shiva Balathandayuthapani"
-              priority={true}
+              priority
               className="h-full"
             />
           </div>
         </div>
 
-        <div className="col-span-1 sm:col-span-3 flex flex-col gap-0">
-          <div className="h-[175px] sm:h-[210px]">
-            <PhotoCard
-              src={outerPhotos[2]}
-              alt="Right top photo"
-              className="h-full"
-            />
-          </div>
-          <div className="h-[175px] sm:h-[210px]">
-            <PhotoCard
-              src={outerPhotos[3]}
-              alt="Right bottom photo"
-              className="h-full"
-            />
-          </div>
-        </div>
-
+        <OuterColumn photos={[outerPhotos[2], outerPhotos[3]]} altPrefix="Right" />
       </div>
     </div>
   );

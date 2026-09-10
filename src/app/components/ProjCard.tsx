@@ -3,13 +3,13 @@ import { ProjectProps } from "./Projects";
 import Skill from "./Skill";
 import Link from "next/link";
 
-const ProjCard: React.FC<ProjectProps> = ({
+const ProjCard = ({
   title,
   description,
   skills,
   repo,
   img,
-}) => {
+}: ProjectProps) => {
   const imageSrc = img || `/proj/${title}.jpg`;
   return (
     <div className="bg-slate-100 flex flex-col rounded-lg overflow-hidden border border-gray-200">
@@ -26,8 +26,8 @@ const ProjCard: React.FC<ProjectProps> = ({
           <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1">{title}</h3>
           <p className="text-base text-gray-600 leading-relaxed mb-3">{description}</p>
           <div className="flex flex-wrap gap-1.5 mb-4">
-            {skills.sort().map((s, index) => (
-              <Skill key={index} skill={s} />
+            {skills.map((s) => (
+              <Skill key={s} skill={s} />
             ))}
           </div>
         </div>
