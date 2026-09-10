@@ -89,6 +89,9 @@ const PhotoCard = ({
   );
 };
 
+const CENTER_ROTATION_INTERVAL_MS = 8000;
+const OUTER_ROTATION_INTERVAL_MS = 4500;
+
 const PhotoGrid = ({ className = "" }: { className?: string }) => {
   const [centerIdx, setCenterIdx] = useState(0);
   const [outerPhotos, setOuterPhotos] = useState<[string, string, string, string]>([
@@ -102,14 +105,14 @@ const PhotoGrid = ({ className = "" }: { className?: string }) => {
     if (CENTER_IMAGES.length <= 1) return;
     const timer = setInterval(() => {
       setCenterIdx((prev) => (prev + 1) % CENTER_IMAGES.length);
-    }, 8000);
+    }, CENTER_ROTATION_INTERVAL_MS);
     return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setOuterPhotos((current) => {
-        const slotIndex = Math.floor(Math.random() * 4);
+        const slotIndex = Math.floor(Math.random() * current.length);
         const available = POOL_IMAGES.filter((img) => !current.includes(img));
         if (available.length === 0) return current;
 
@@ -118,7 +121,7 @@ const PhotoGrid = ({ className = "" }: { className?: string }) => {
         updated[slotIndex] = nextPhoto;
         return updated;
       });
-    }, 4500);
+    }, OUTER_ROTATION_INTERVAL_MS);
 
     return () => clearInterval(timer);
   }, []);
