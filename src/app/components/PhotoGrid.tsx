@@ -101,7 +101,7 @@ const OUTER_ROTATION_INTERVAL_MS = 4500;
 const OuterColumn = ({ photos, altPrefix }: { photos: [string, string]; altPrefix: string }) => (
   <div className="col-span-1 sm:col-span-3 flex flex-col gap-0">
     {photos.map((src, idx) => (
-      <div key={idx} className="h-[175px] sm:h-[210px]">
+      <div key={idx} className="h-[120px] sm:h-[210px]">
         <PhotoCard
           src={src}
           alt={`${altPrefix} ${idx === 0 ? "top" : "bottom"} photo`}
@@ -152,7 +152,7 @@ const PhotoGrid = ({ className = "" }: { className?: string }) => {
         <OuterColumn photos={[outerPhotos[0], outerPhotos[1]]} altPrefix="Left" />
 
         <div className="col-span-2 sm:col-span-6 order-first sm:order-none">
-          <div className="h-[350px] sm:h-[420px] w-full">
+          <div className="h-[240px] sm:h-[420px] w-full">
             <PhotoCard
               src={CENTER_IMAGES[centerIdx]}
               alt="Shiva Balathandayuthapani"

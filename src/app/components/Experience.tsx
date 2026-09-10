@@ -84,13 +84,13 @@ const Experience = () => {
               className="my-2 "
             />
             <div className="flex flex-col">
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">University of Texas at Austin</h3>
-              <p className="text-base text-gray-700">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">University of Texas at Austin</h3>
+              <p className="text-sm sm:text-base text-gray-700">
                 Bachelor of Science in Computer Science and Mathematics
               </p>
-              <p className="text-sm text-gray-500">August 2022 – May 2026</p>
-              <p className="text-base text-gray-600 mt-2 font-medium">GPA: 3.733</p>
-              <p className="text-base text-gray-600 leading-relaxed mt-1">
+              <p className="text-xs sm:text-sm text-gray-500">August 2022 – May 2026</p>
+              <p className="text-sm sm:text-base text-gray-600 mt-2 font-medium">GPA: 3.733</p>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mt-1">
                 <span className="font-medium text-gray-700">Relevant Courses:</span> Data Structures and Algorithms,
                 Cryptography, Operating Systems, Systems for Machine Learning
                 and Big Data

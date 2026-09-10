@@ -23,8 +23,8 @@ const ProjCard = ({
       </div>
       <div className="p-4 flex flex-col justify-between flex-grow">
         <div>
-          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1">{title}</h3>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">{description}</p>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">{title}</h3>
+          <p className="text-sm text-gray-600 leading-relaxed mb-3">{description}</p>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {skills.map((s) => (
               <Skill key={s} skill={s} />
@@ -35,7 +35,7 @@ const ProjCard = ({
           <Link
             href={repo}
             target="_blank"
-            className="text-sm font-medium text-blue-600 hover:text-blue-800 underline"
+            className="text-xs sm:text-sm font-medium text-blue-600 hover:text-blue-800 underline"
           >
             view repo →
           </Link>

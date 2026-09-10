@@ -6,17 +6,15 @@ import Link from "next/link";
 const Contact = () => {
   return (
     <div id="contact" className="w-full flex justify-center pt-10 pb-0 scroll-mt-20">
-      <div className="flex flex-wrap flex-grow px-12 lg:px-0 gap-6">
-        <div className="flex flex-wrap w-full justify-between items-start">
-          <div>
-            <Title>Contact</Title>
-          </div>
-          <div className="mt-4 sm:mt-0 text-left sm:text-right flex flex-col items-start sm:items-end">
-            <p className="text-sm text-gray-500">Feel free to reach me at</p>
-            <a href="mailto:shivabalanb03@gmail.com" className="text-lg sm:text-xl font-semibold text-gray-900 hover:text-blue-600 hover:underline">
+      <div className="w-full flex flex-col px-12 lg:px-0 gap-6">
+        <div className="flex flex-col sm:flex-row w-full justify-between items-start gap-2 sm:gap-0">
+          <Title className="mb-0">Contact</Title>
+          <div className="text-left sm:text-right flex flex-col items-start sm:items-end">
+            <p className="text-xs sm:text-sm text-gray-500">Feel free to reach me at</p>
+            <a href="mailto:shivabalanb03@gmail.com" className="text-base sm:text-lg font-semibold text-gray-900 hover:text-blue-600 hover:underline break-all sm:break-normal">
               shivabalanb03@gmail.com
             </a>
-            <div className="flex gap-4 text-sm font-medium text-gray-600 mt-2">
+            <div className="flex gap-4 text-xs sm:text-sm font-medium text-gray-600 mt-2">
               <Link href="https://github.com/shivabalanb" target="_blank" className="hover:text-gray-900 underline">
                 GitHub
               </Link>
