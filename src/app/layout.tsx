@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <link rel="icon" href="/favicon.ico" />
 
-      <body className="text-gray-900 antialiased font-sans">
+      <body className="text-gray-900 antialiased">
         {children}
       </body>
     </html>
