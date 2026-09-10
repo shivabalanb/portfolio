@@ -5,29 +5,31 @@ const ExpCard: React.FC<ExpProps> = ({
   title,
   company,
   duration,
+  location,
   description,
 }) => {
   return (
     <div className=" flex md:gap-8 justify-start items-start flex-wrap md:flex-nowrap  border-b-2 py-4 ">
       <Image
-        alt="UT Logo"
+        alt={`${company} logo`}
         width={100}
         height={100}
         src={`/exp/${company}.jpg`}
-        className="my-2"
+        className="my-2 rounded object-contain"
       />
-      <div className="w-full flex flex-col ">
-        <div className="flex items-center justify-between">
-          <div className=" text-xl text-left">
-            <p className=" font-bold">{company}</p>
-            <p className="italic">{title}</p>
+      <div className="w-full flex flex-col">
+        <div className="flex items-start justify-between gap-4">
+          <div className="text-left">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{company}</h3>
+            <p className="text-base text-gray-700 font-medium">{title}</p>
+            {location && <p className="text-sm text-gray-500">{location}</p>}
           </div>
 
-          <p className=" text-right">{duration}</p>
+          <p className="text-right text-sm text-gray-500 font-medium whitespace-nowrap">{duration}</p>
         </div>
-        <ul className="list-disc ml-6 mt-2">
+        <ul className="list-disc ml-5 mt-2.5 space-y-1">
           {description.map((d, index) => (
-            <li key={index}>{d}</li>
+            <li key={index} className="text-gray-600 text-base leading-relaxed">{d}</li>
           ))}
         </ul>
       </div>

@@ -12,10 +12,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <link rel="icon" href="/favicon.ico" />
 
-      <body>{children}</body>
+      <body className="text-gray-900 antialiased font-sans">
+        {children}
+      </body>
     </html>
   );
 }

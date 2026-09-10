@@ -3,9 +3,15 @@ interface TitleProps {
   className?: string;
 }
 
-const Title = ({ children, className = "" }: TitleProps) => {
+const Title = ({ children, className }: TitleProps) => {
   return (
-    <h1 className={`text-4xl mb-4 tracking-tight ${className}`}>{children}</h1>
+    <h1
+      className={`text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 ${
+        className !== undefined ? className : "mb-4"
+      }`}
+    >
+      {children}
+    </h1>
   );
 };
 

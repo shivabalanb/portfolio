@@ -21,7 +21,13 @@ const skillMap: { [key: string]: string } = {
 
 const Skill = ({ skill }: { skill: string }) => {
   return (
-    <div className={`${skillMap[skill]} p-2 rounded-md w-fit bg-`}>{skill}</div>
+    <span
+      className={`${
+        skillMap[skill] || "bg-gray-200"
+      } px-2.5 py-0.5 rounded text-xs sm:text-sm font-medium text-gray-800 w-fit`}
+    >
+      {skill}
+    </span>
   );
 };
 export default Skill;
